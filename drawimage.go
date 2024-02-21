@@ -15,6 +15,12 @@ import (
 //	var newImage draw.Image = imgrow.Image(2, oldImage)
 //
 // ... would return a new image that is just like 'oldImage' except any drawing on it is 2 times as big.
+//
+// Note that if you are trying to try a complex object and want the top-left corner to be at the original (unscaled) (x,y)
+// rather (rather than the scaled position) then you need to move the top-left corner to:
+//
+//	xAdjusted := x / scalar
+//	yAdjusted := y / scalar
 func DrawImage(scalar int, img draw.Image) draw.Image {
 	return internalDrawImage {
 		img:img,
