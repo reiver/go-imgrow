@@ -68,7 +68,7 @@ func (receiver internalDrawImage) Set(x int, y int, c color.Color) {
 
 	var scalar int = receiver.scalar
 
-	xScaled, yScaled := inverseScaleXY(scalar, x, y)
+	xScaled, yScaled := scaleXY(scalar, x, y)
 
 	for yi := yScaled; yi < (yScaled + scalar); yi++ {
 		for xi := xScaled;  xi < (xScaled + scalar); xi++ {
